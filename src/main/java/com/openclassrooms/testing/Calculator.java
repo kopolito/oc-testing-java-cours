@@ -25,9 +25,12 @@ public class Calculator {
 		Set<Integer> integers = new HashSet<Integer>();
 		String numberString = String.valueOf(number);
 		for (int i = 0; i < numberString.length(); i++) {
-			// Integer.parseInt(string, beginIndex, endIndex, radix)
-			int nb = Integer.parseInt(numberString, i, i + 1, 10);
-			integers.add(nb);
+			if (numberString.charAt(i) != '-') {
+				// Integer.parseInt(string, beginIndex, endIndex, radix)
+				int nb = Integer.parseInt(numberString, i, i + 1, 10);
+				integers.add(nb);
+			}
+
 		}
 		return integers;
 	}
